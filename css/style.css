@@ -1,3 +1,5 @@
+@import url('./time_calendar.css');
+
 @font-face {
   font-family: 'Arial-MT';
   src: url("../assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
@@ -8,6 +10,8 @@
   margin: 0;
   padding: 0;
 }
+
+
 
 body {
   min-width: 480px;
@@ -193,13 +197,13 @@ body {
   background-image: url("../assets/svg/slider-next.svg");
 }
 
-.time {
+/* .time {
   min-height: 124px;
   margin-bottom: 10px;
   font-family: 'Arial-MT';
   font-size: 100px;
   letter-spacing: -4px;  
-}
+ } */
 
 .date {
   min-height: 28px;
@@ -284,3 +288,4 @@ body {
     padding: 5px;
   }
 }
+

@@ -1,0 +1,20 @@
+.time {
+    min-height: 124px;
+    margin-bottom: 10px;
+    font-family: 'Arial-MT';
+    font-size: 100px;
+    letter-spacing: -4px;
+  }
+  .time-container{
+    display: flex;
+    list-style-type: none;
+    width: 490px;
+  }
+.time-item:nth-child(1),
+.time-item:nth-child(4),
+.time-item:nth-child(3)
+{
+    max-width: 112px;
+}
+
+
