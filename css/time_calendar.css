@@ -17,4 +17,16 @@
     max-width: 112px;
 }
 
+.date{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24px;
+  }
+  .day, .month, .day-numbers{
+    padding: 3px;
+  }
+  .day::after{
+    content: ',';
+  }
+
 

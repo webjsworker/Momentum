@@ -1,8 +1,6 @@
 const time = document.querySelector('.time')
 const timeConainer = document.querySelectorAll('.time-item')
 
-console.log(timeConainer)
-
 function getDate() {
     return new Date
 }
@@ -25,10 +23,3 @@ setInterval(() => {
     timeConainer[2].innerHTML = getMinutes()
     timeConainer[4].innerHTML = getSeconds()
 }, 1000);
-
-
-
-/* dd = pad(date.getDate()), // День 
-hh = pad(date.getHours()),
-mm = pad(date.getMinutes()),
-ss = pad(date.getSeconds()); */
