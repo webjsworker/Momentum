@@ -14,10 +14,6 @@ function getSeconds(){
     return getDate().getSeconds()
 }
 
-console.log(getHours())
-console.log(getMinutes())
-console.log(getSeconds())
-
 setInterval(() => {
     timeConainer[0].innerHTML = getHours()
     timeConainer[2].innerHTML = getMinutes()
