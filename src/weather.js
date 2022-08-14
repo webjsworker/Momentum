@@ -15,7 +15,7 @@ async function getWeather(cityName) {
     try {
         let weater = await fetch(URL);
         let result = await weater.json();
-        console.log(result)
+        //console.log(result)
         weather_error.innerHTML = ''
         temperature.innerHTML = Math.round(result.main.temp - 273) + ' &degC'
         humidity.innerHTML = 'Humidity: ' + result.main.humidity + ' %'
