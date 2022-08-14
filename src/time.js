@@ -5,13 +5,23 @@ function getDate() {
     return new Date
 }
 function getHours() {
+    if(String(getDate().getHours()).length < 2 ){
+        return `0${getDate().getHours()}`
+    }
     return getDate().getHours()
 }
 function getMinutes() {
+    if(String(getDate().getMinutes()).length < 2){
+        return `0${getDate().getMinutes()}`
+    }
     return getDate().getMinutes()
 }
 function getSeconds(){
-    return getDate().getSeconds()
+    if(String(getDate().getSeconds()).length < 2 ){
+      return `0${getDate().getSeconds()}`    
+    } 
+    return  getDate().getSeconds()
+    
 }
 
 setInterval(() => {
