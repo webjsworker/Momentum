@@ -45,11 +45,16 @@ function SetCity(){
     city.addEventListener("keydown", (event) => {
     if (event.keyCode === 13) {
         getWeather(city.value)   
-        console.log("weather found works ") 
+        //console.log("weather found works ") 
     } 
 })
 }
 SetCity()
+
+city.onblur = () =>{
+    getWeather(city.value) 
+    //console.log('unfocus')
+}
 
 
 /* var input = document.getElementById("textSearch");
