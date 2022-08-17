@@ -38,15 +38,16 @@ function setPlaylist() {
     audioSrc(playList[playlistcounter].src)
 }
 
-//console.log('src = ' + playList[playlistcounter].src)
-
-
 function playaudio() {
     music[0].currentTime = 0;
     music[0].play();
+    play.classList.remove('play')
+    play.classList.add('pause')
 }
 function pauseAudio() {
     music[0].pause();
+    play.classList.add('play')
+    play.classList.remove('pause')
 }
 
 play.onclick = () => {
@@ -66,14 +67,15 @@ nextsoung.onclick = () => {
     if (playlistcounter > (playList.length - 1)) {
         playlistcounter = 0
     }
+    SetActive()
     if (audiostatus == true) {
         audiostatus = false
         pauseAudio()
         setPlaylist()
         audiostatus = true
         playaudio()
-        
     }
+
 
 }
 prevsoung.onclick = () => {
@@ -81,6 +83,7 @@ prevsoung.onclick = () => {
     if (playlistcounter < 0) {
         playlistcounter = playList.length - 1
     }
+    SetActive()
     if (audiostatus == true) {
         audiostatus = false
         pauseAudio()
@@ -90,38 +93,43 @@ prevsoung.onclick = () => {
     }
 }
 
-function SetPlayList(){
-    playList.map((el, index )=>{
-    let li = document.createElement('li');
-    li.innerHTML = el.title
-    //////
-    if(index == playlistcounter){ 
-      li.classList.add('active')  
-    } 
-    if(index != playlistcounter){
-        li.classList.remove('active') 
-    }
+function SetPlayList() {
+    playList.map((el, index) => {
+        let li = document.createElement('li');
+        li.innerHTML = el.title
+        play_list.append(li);
+    })
 
-    /////
-    play_list.append(li);
-    }) 
-    
 }
 SetPlayList()
+function SetActive() {
+    let elems = play_list.children;
+    for (let i = 0; i <= elems.length - 1; i++) {
+        elems[i].classList.remove('active')
+        if (i == playlistcounter) {
+            elems[i].classList.add('active')
+        }
+    }
 
-function SetActive(){
-  
-
-
-   /*  playList.map((el, index)=>{
-       if(playlistcounter == index){
-
-        elem.classList
-       }
-    }) */
 }
 SetActive()
+ 
 
-//
+music[0].addEventListener("ended", ()=>{
+console.log('Ended')
+ playlistcounter++
+    if (playlistcounter > (playList.length - 1)) {
+        playlistcounter = 0
+    }
+    SetActive()
+    if (audiostatus == true) {
+        audiostatus = false
+        pauseAudio()
+        setPlaylist()
+        audiostatus = true
+        playaudio()
+    }
 
-//console.log(music)
+} );
+
+ 
