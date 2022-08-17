@@ -23,7 +23,7 @@ function SayHello() {
     if (6 < hours  ) { greeting_mesage = 'Good morning' }
     if (12 < hours  ) { greeting_mesage = 'Good afternoon ' }    
     if (18 < hours  ) { greeting_mesage = 'Good evening' }
-    if (21 < hours  ) { greeting_mesage = 'Good night' }
+    if (0 < hours  ) { greeting_mesage = 'Good night' }
 }
 setInterval(() => {
     SayHello()

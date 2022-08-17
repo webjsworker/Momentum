@@ -13,7 +13,7 @@ function PartOfDay() {
     if (6 < part_of_day  ) { part_of_day = 'morning' }
     if (12 < part_of_day  ) { part_of_day = 'afternoon' }
     if (18 < part_of_day  ) { part_of_day = 'evening' }
-    if (21 < part_of_day  ) { part_of_day = 'night' }
+    if (0 < part_of_day  ) { part_of_day = 'night' }
     return part_of_day
 }
 
