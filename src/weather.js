@@ -7,7 +7,11 @@ const image = document.createElement('img')
 const city = document.querySelector('.city')
 const weather_error = document.querySelector('.weather-error')
 
-let city_defoult = 'Mogilev'
+ 
+if(!localStorage.getItem('city')){
+   localStorage.setItem('city', 'Mogilev' ); 
+}
+
 
 async function getWeather(cityName) {
     const key = 'c3052d4861727d54201d760d99383718';
@@ -15,7 +19,7 @@ async function getWeather(cityName) {
     try {
         let weater = await fetch(URL);
         let result = await weater.json();
-        //console.log(result)
+         
         weather_error.innerHTML = ''
         temperature.innerHTML = Math.round(result.main.temp - 273) + ' &degC'
         humidity.innerHTML = 'Humidity: ' + result.main.humidity + ' %'
@@ -33,7 +37,7 @@ async function getWeather(cityName) {
         weather_icon.innerHTML = ''
     }
 }
-getWeather( city_defoult )
+getWeather( localStorage.getItem('city') )
 
 function getIcon(icon) {
     const URL = `http://openweathermap.org/img/w/${icon}.png`
@@ -44,8 +48,9 @@ function getIcon(icon) {
 function SetCity(){
     city.addEventListener("keydown", (event) => {
     if (event.keyCode === 13) {
-        getWeather(city.value)   
-        //console.log("weather found works ") 
+        getWeather(city.value)  
+        localStorage.setItem('city', city.value ); 
+       
     } 
 })
 }
@@ -53,14 +58,12 @@ SetCity()
 
 city.onblur = () =>{
     getWeather(city.value) 
-    //console.log('unfocus')
+    localStorage.setItem('city', city.value );
+     
 }
 
 
-/* var input = document.getElementById("textSearch");
-input.addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        alert("yes it works,I'm happy ");
-    }
-}); */
+    
+
+
+ 
