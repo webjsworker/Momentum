@@ -46,6 +46,11 @@ body {
 
 .play-list {
   text-align: left;
+  list-style-type: none;
+
+}
+.active {
+  color: red;
 }
 
 .play-item {
