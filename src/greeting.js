@@ -20,10 +20,11 @@ if(name_contaner) {
     if (21 < hours  ) { greeting.innerHTML = 'Good night' }
 } */
 function SayHello() {
+    if (0 < hours  ) { greeting_mesage = 'Good night' }
     if (6 < hours  ) { greeting_mesage = 'Good morning' }
     if (12 < hours  ) { greeting_mesage = 'Good afternoon ' }    
     if (18 < hours  ) { greeting_mesage = 'Good evening' }
-    if (0 < hours  ) { greeting_mesage = 'Good night' }
+    
 }
 setInterval(() => {
     SayHello()
